@@ -23,7 +23,7 @@ docker build -t ai-workspace .
 Container starten:
 
 ```bash
-docker run --rm -p 8888:8888 -v "$PWD/workspace":/workspace ai-workspace
+docker run --rm -p 8888:8888 -v "$PWD/notebooks":/workspace ai-workspace
 ```
 
 Dann im Browser öffnen:
@@ -32,8 +32,11 @@ Dann im Browser öffnen:
 http://localhost:8888
 ```
 
-Das Notebook zeigt:
-- Python im Container
-- pandas/NumPy/matplotlib/scikit-learn
-- Speichern in ein persistentes Volume
-- Nutzung von `pandoc` als Systemwerkzeug
+Um direkt ein LaTeX-Dokument zu kompilieren:
+
+```bash
+docker run --rm \
+  -v "$PWD":/workspace \
+  ai-workspace \
+  latexmk -xelatex main.tex
+```

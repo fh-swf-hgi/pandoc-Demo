@@ -6,9 +6,12 @@ FROM python:3.11-slim
 # - git/curl als typische Entwicklungswerkzeuge
 RUN apt-get update && apt-get install -y --no-install-recommends \
     pandoc \
+    texlive-xetex \
     texlive-latex-base \
     texlive-latex-recommended \
+    texlive-latex-extra \
     texlive-fonts-recommended \
+    texlive-plain-generic \
     lmodern \
     git \
     curl \
