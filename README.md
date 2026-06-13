@@ -38,5 +38,5 @@ Um direkt ein LaTeX-Dokument zu kompilieren:
 docker run --rm \
   -v "$PWD":/workspace \
   ai-workspace \
-  latexmk -xelatex main.tex
+ xelatex -output-directory=LaTeX main.tex
 ```
